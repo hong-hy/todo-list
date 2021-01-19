@@ -8,6 +8,7 @@
         * {margin: 0; padding: 0;}
         img {width: 100%; height: 100%;}
         svg {overflow: hidden; width: 100%; height: 100%;}
+        #btn-del {color: red; cursor: pointer;}
     </style>
 </head>
 <body>
@@ -56,20 +57,34 @@
 
         // *TODO List*
         const txtBox = document.querySelector('.schedule input'); // input
-        const addBtn = document.querySelector('.schedule .btn-add'); // button
+        const addBtn = document.querySelector('.schedule .btn-add'); // add button
+        const delBtn = document.querySelector('#btn-del'); // delete button
         const list = document.querySelector('.list'); // ul
+        let num = 0; // li 인덱스 카운트
 
         function addSchedule () {
             // li 요소를 만들고 listItem에 저장
             const listItem = document.createElement('li');
 
             // li에 input의 값을 넣어 줌 
-            listItem.innerHTML = txtBox.value;
+            listItem.innerHTML = txtBox.value + '<span id="btn-del" onclick="delSchedule('+num+')">삭제</span>';
+            // li에 각각 id값을 지정 (ex/ todo0, todo1, todo2)
+            listItem.setAttribute('id','todo'+num);
             // 값이 입력된 li를 ul의 자식요소로 넣어 줌
             list.appendChild(listItem);
 
             // input은 다시 빈 값으로 변경
             txtBox.value = null;
+
+            // 인덱스 카운트르르 위해 num값을 하나씩 증가
+            num++;
+        }
+
+        function delSchedule (num) {
+            // 삭제하려는 li의 id값을 받아와서
+            let liIndex = document.getElementById('todo'+num);
+            // 해당 li를 삭제처리
+            list.removeChild(liIndex);
         }
 
         addBtn.addEventListener('click', () => {
