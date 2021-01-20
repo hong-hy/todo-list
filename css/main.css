@@ -1,0 +1,10 @@
+* { margin: 0; padding: 0; }
+
+img { width: 100%; height: 100%; }
+
+svg { overflow: hidden; width: 100%; height: 100%; }
+
+#btn-del { color: red; cursor: pointer; }
+
+#btn-all-del { color: blue; cursor: pointer; }
+/*# sourceMappingURL=main.css.map */
