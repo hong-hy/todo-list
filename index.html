@@ -19,7 +19,7 @@
             <span class="day"></span>
         </div>
         <div class="schedule">
-            <input type="text">
+            <input type="text" onKeyDown="pressEnter()">
             <button class="btn-add">
                 추가
                 <!-- <span><img src="svg/plus-solid.svg" alt=""></span> -->
@@ -87,6 +87,17 @@
             list.removeChild(liIndex);
         }
 
+        function pressEnter(){
+            // input에서 엔터키를 눌렀을 때도 일정이 추가되도록 함
+            if(event.keyCode == 13){
+                if (txtBox.value == "") {
+                    alert('일정을 입력하세요.')
+                } else {
+                    addSchedule();
+                }
+            }
+        }
+
         addBtn.addEventListener('click', () => {
             // 만약 사용자가 빈 값을 입력했다면 알림창을 띄우고, 값을 입력했다면 addSchedule 함수를 실행
             if (txtBox.value == "") {
@@ -95,6 +106,8 @@
                 addSchedule();
             }
         });
+
+        
     </script>
 </body>
 </html>
