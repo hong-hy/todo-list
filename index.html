@@ -10,22 +10,21 @@
 </head>
 <body>
     <section>
-        <h1>TODO-List</h1>
-        <div class="today">
-            <span class="date"></span>
-            <span class="day"></span>
+        <div class="wrap-flex">
+            <h1>TODO-List</h1>
+            <div class="today">
+                <span class="date"></span>
+                <span class="day"></span>
+            </div>
+            <div class="schedule">
+                <input type="text" onKeyDown="pressEnter()" placeholder="Add your schedule.">
+                <button class="btn-add"><span></span></button>
+            </div>
+            <ul class="list">
+                <!-- <li><span class="check"></span>일정입니다.<span><img src="svg/trash-alt-solid.svg" alt=""></span></li> -->
+            </ul>
+            <div id="btn-all-del" onclick="delAll()">Delete All</div>
         </div>
-        <div class="schedule">
-            <input type="text" onKeyDown="pressEnter()">
-            <button class="btn-add">
-                추가
-                <!-- <span><img src="svg/plus-solid.svg" alt=""></span> -->
-            </button>
-        </div>
-        <ul class="list">
-            <!-- <li><span class="check"></span>일정입니다.<span><img src="svg/trash-alt-solid.svg" alt=""></span></li> -->
-        </ul>
-        <div id="btn-all-del" onclick="delAll()">전체삭제</div>
     </section>
 </body>
 </html>
