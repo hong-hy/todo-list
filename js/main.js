@@ -83,3 +83,27 @@ addBtn.addEventListener('click', () => {
         addSchedule();
     }
 });
+
+// * 다크모드 * ==================
+const body = document.querySelector('body');
+const modeBtn = document.querySelector('.select-mode');
+const modeTxt = document.querySelector('.select-mode span');
+
+function selectMode () {
+    if (!modeBtn.classList.contains('dark')) {
+        body.classList.add('dark');
+        modeBtn.classList.add('dark');
+        modeTxt.innerHTML = ('Dark');
+    } else {
+        body.classList.remove('dark');
+        modeBtn.classList.remove('dark');
+        modeTxt.innerHTML = ('Light');
+    }
+
+    // modeBtn.classList.toggle = 'dark';
+    // console.log('fsd');
+}
+
+modeBtn.addEventListener('click', () => {
+    selectMode();
+})
