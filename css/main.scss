@@ -17,15 +17,23 @@ section {
         max-width: 600px;
         min-height: 400px;
         padding: 30px 30px 60px 30px;
-        margin: 80px 0;
+        margin: 80px 40px;
         box-sizing: border-box;
         background-color: #fff;
         border-radius: 8px;  
         box-shadow: 2px 2px 3px 0 rgba(0,0,0,0.32);
+        @media (max-width: 768px) {
+            padding: 20px 20px 60px 20px;
+            margin: 40px 20px;
+        }
         h1 {
             font-family: 'Montserrat', sans-serif;
             font-size: 34px;
             margin-bottom: 10px;
+            @media (max-width: 768px) {
+                font-size: 24px;
+                margin-bottom: 6px;
+            }
         }
         .today {
             font-family: 'Montserrat', sans-serif;
@@ -33,22 +41,31 @@ section {
         }
         .schedule {
             input {
-                    width: calc(100% - 62px);
-                    height: 42px;
-                    border-radius: 4px;
-                    border: 1px solid #ababab;
-                    padding: 4px 8px;
-                    box-sizing: border-box;
+                width: calc(100% - 62px);
+                height: 42px;
+                border-radius: 4px;
+                border: 1px solid #ababab;
+                padding: 4px 8px;
+                box-sizing: border-box;
+                font-size: 18px;
+                line-height: 42px;
+                vertical-align: middle;
+                color: #1b1b1b;
+                outline: none;
+                &::placeholder {
+                    font-family: 'Montserrat', sans-serif;
+                    color: #ababab;
                     font-size: 18px;
-                    line-height: 42px;
-                    vertical-align: middle;
-                    color: #1b1b1b;
-                    outline: none;
+                }
+                @media (max-width: 768px) {
+                    width: calc(100% - 50px);
+                    height: 36px;
+                    font-size: 16px;
+                    line-height: 36px;
                     &::placeholder {
-                        font-family: 'Montserrat', sans-serif;
-                        color: #ababab;
-                        font-size: 18px;
+                        font-size: 16px;
                     }
+                }
             }
             .btn-add {
                 width: 56px;
@@ -70,6 +87,15 @@ section {
                     background-repeat: no-repeat;
                     vertical-align: middle;
                 }
+                @media (max-width: 768px) {
+                    width: 46px;
+                    height: 36px;
+                    margin-left: 0;
+                    span {
+                        width: 15px;
+                        height: 15px;
+                    }
+                }
             }
         }
         #btn-all-del {
@@ -84,13 +110,42 @@ section {
         }
         .list {
             margin-top: 20px;
+            overflow: hidden;
             li {
+                position: relative;
                 background: #eee;
                 padding: 12px 20px;
                 margin-bottom: 10px;
                 border-radius: 4px;
+                transition: 0.3s ease;
                 &:last-child {
                     margin-bottom: 0;
+                }
+                &:hover {
+                    transform: translateX(-60px);
+                }
+                #btn-del {
+                    display: inline-block;
+                    width: 60px;
+                    height: 100%;
+                    position: absolute;
+                    top: 0;
+                    right: -60px;
+                    background: #d44317;
+                    border-radius: 0 4px 4px 0;
+                    transition: 0.3s ease;
+                    cursor: pointer;
+                    img {
+                        width: 24px;
+                        height: 24px;
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%,-50%);
+                    }
+                }
+                @media (max-width: 768px) {
+                    padding: 10px 18px;
                 }
             }
         }

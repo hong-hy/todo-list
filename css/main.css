@@ -10,9 +10,13 @@ li { list-style: none; }
 
 section { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; -webkit-box-align: center; -ms-flex-align: center; align-items: center; width: 100%; min-height: 100vh; background: -webkit-gradient(linear, left top, right top, from(#3a1bd7), to(#a06bd7)); background: linear-gradient(90deg, #3a1bd7 0%, #a06bd7 100%); }
 
-section .wrap-flex { position: relative; width: 100%; max-width: 600px; min-height: 400px; padding: 30px 30px 60px 30px; margin: 80px 0; -webkit-box-sizing: border-box; box-sizing: border-box; background-color: #fff; border-radius: 8px; -webkit-box-shadow: 2px 2px 3px 0 rgba(0, 0, 0, 0.32); box-shadow: 2px 2px 3px 0 rgba(0, 0, 0, 0.32); }
+section .wrap-flex { position: relative; width: 100%; max-width: 600px; min-height: 400px; padding: 30px 30px 60px 30px; margin: 80px 40px; -webkit-box-sizing: border-box; box-sizing: border-box; background-color: #fff; border-radius: 8px; -webkit-box-shadow: 2px 2px 3px 0 rgba(0, 0, 0, 0.32); box-shadow: 2px 2px 3px 0 rgba(0, 0, 0, 0.32); }
+
+@media (max-width: 768px) { section .wrap-flex { padding: 20px 20px 60px 20px; margin: 40px 20px; } }
 
 section .wrap-flex h1 { font-family: 'Montserrat', sans-serif; font-size: 34px; margin-bottom: 10px; }
+
+@media (max-width: 768px) { section .wrap-flex h1 { font-size: 24px; margin-bottom: 6px; } }
 
 section .wrap-flex .today { font-family: 'Montserrat', sans-serif; margin-bottom: 20px; }
 
@@ -26,15 +30,32 @@ section .wrap-flex .schedule input::-ms-input-placeholder { font-family: 'Montse
 
 section .wrap-flex .schedule input::placeholder { font-family: 'Montserrat', sans-serif; color: #ababab; font-size: 18px; }
 
+@media (max-width: 768px) { section .wrap-flex .schedule input { width: calc(100% - 50px); height: 36px; font-size: 16px; line-height: 36px; }
+  section .wrap-flex .schedule input::-webkit-input-placeholder { font-size: 16px; }
+  section .wrap-flex .schedule input:-ms-input-placeholder { font-size: 16px; }
+  section .wrap-flex .schedule input::-ms-input-placeholder { font-size: 16px; }
+  section .wrap-flex .schedule input::placeholder { font-size: 16px; } }
+
 section .wrap-flex .schedule .btn-add { width: 56px; height: 42px; border-radius: 4px; border: none; background: #1d1d1d; margin-left: 2px; vertical-align: middle; outline: none; cursor: pointer; }
 
 section .wrap-flex .schedule .btn-add span { display: inline-block; width: 18px; height: 18px; background-image: url("../svg/plus-solid.svg"); background-position: center; background-size: 100%; background-repeat: no-repeat; vertical-align: middle; }
 
+@media (max-width: 768px) { section .wrap-flex .schedule .btn-add { width: 46px; height: 36px; margin-left: 0; }
+  section .wrap-flex .schedule .btn-add span { width: 15px; height: 15px; } }
+
 section .wrap-flex #btn-all-del { position: absolute; left: 50%; -webkit-transform: translateX(-50%); transform: translateX(-50%); bottom: 20px; cursor: pointer; font-size: 14px; color: #666; text-decoration: underline; }
 
-section .wrap-flex .list { margin-top: 20px; }
+section .wrap-flex .list { margin-top: 20px; overflow: hidden; }
 
-section .wrap-flex .list li { background: #eee; padding: 12px 20px; margin-bottom: 10px; border-radius: 4px; }
+section .wrap-flex .list li { position: relative; background: #eee; padding: 12px 20px; margin-bottom: 10px; border-radius: 4px; -webkit-transition: 0.3s ease; transition: 0.3s ease; }
 
 section .wrap-flex .list li:last-child { margin-bottom: 0; }
+
+section .wrap-flex .list li:hover { -webkit-transform: translateX(-60px); transform: translateX(-60px); }
+
+section .wrap-flex .list li #btn-del { display: inline-block; width: 60px; height: 100%; position: absolute; top: 0; right: -60px; background: #d44317; border-radius: 0 4px 4px 0; -webkit-transition: 0.3s ease; transition: 0.3s ease; cursor: pointer; }
+
+section .wrap-flex .list li #btn-del img { width: 24px; height: 24px; position: absolute; top: 50%; left: 50%; -webkit-transform: translate(-50%, -50%); transform: translate(-50%, -50%); }
+
+@media (max-width: 768px) { section .wrap-flex .list li { padding: 10px 18px; } }
 /*# sourceMappingURL=main.css.map */

@@ -33,7 +33,7 @@ function addSchedule () {
     const listItem = document.createElement('li');
 
     // li에 input의 값을 넣어 줌 
-    listItem.innerHTML = txtBox.value + '<span id="btn-del" onclick="delSchedule('+num+')">삭제</span>';
+    listItem.innerHTML = txtBox.value + '<span id="btn-del" onclick="delSchedule('+num+')"><img src="svg/trash-alt-solid.svg"></span>';
     // li에 각각 id값을 지정 (ex/ todo0, todo1, todo2)
     listItem.setAttribute('id','todo'+num);
     // 값이 입력된 li를 ul의 자식요소로 넣어 줌
