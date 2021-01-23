@@ -47,7 +47,7 @@ section .wrap-flex #btn-all-del { position: absolute; left: 50%; -webkit-transfo
 
 section .wrap-flex .list { margin-top: 20px; overflow: hidden; }
 
-section .wrap-flex .list li { position: relative; background: #eee; padding: 12px 20px; margin-bottom: 10px; border-radius: 4px; -webkit-transition: 0.3s ease; transition: 0.3s ease; }
+section .wrap-flex .list li { position: relative; background: #d6d6d6; padding: 12px 20px; margin-bottom: 10px; border-radius: 4px; -webkit-transition: 0.3s ease; transition: 0.3s ease; }
 
 section .wrap-flex .list li:last-child { margin-bottom: 0; }
 
