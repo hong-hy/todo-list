@@ -59,9 +59,6 @@ function delAll () {
         list.removeChild(list.firstChild);
         num = 0;
     }
-
-    // let test = document.querySelectorAll('.list li');
-    // test.remove();
 }
 
 function pressEnter(){
@@ -99,9 +96,6 @@ function selectMode () {
         modeBtn.classList.remove('dark');
         modeTxt.innerHTML = ('Light');
     }
-
-    // modeBtn.classList.toggle = 'dark';
-    // console.log('fsd');
 }
 
 modeBtn.addEventListener('click', () => {
